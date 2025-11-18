@@ -25,9 +25,11 @@ docker-compose build
 
 docker-compose up -d
 
-4.проверка товара: http://127.0.0.1:8000/payment/item/1/
+4.проверка товара:
+
+http://127.0.0.1:8000/payment/item/1/
  
- админка: http://127.0.0.1:8000/admin/
+админка: http://127.0.0.1:8000/admin/
 
 
 
