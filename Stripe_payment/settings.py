@@ -131,3 +131,6 @@ STRIPE_PUBLISHABLE_KEY= os.getenv('STRIPE_PUBLISHABLE_KEY')
 
 os.environ.setdefault('DJANGO_SUPERUSER_USERNAME', os.environ.get('DJANGO_SUPERUSER_USERNAME', 'admin'))
 os.environ.setdefault('DJANGO_SUPERUSER_PASSWORD', os.environ.get('DJANGO_SUPERUSER_PASSWORD', 12345))
+
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost").split(",")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "http://localhost").split(",")
