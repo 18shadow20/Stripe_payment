@@ -16,5 +16,9 @@ EXPOSE 8000
 
 #launch Gunicorn and migration and createsuperuser
 CMD gunicorn Stripe_payment.wsgi:application --bind 0.0.0.0:$PORT
-
+RUN python manage.py migrate
+RUN python manage.py createsuperuser \
+    --noinput \
+    --username $DJANGO_SUPERUSER_USERNAME \
+    --email $DJANGO_SUPERUSER_EMAIL
 
