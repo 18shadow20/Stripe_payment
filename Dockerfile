@@ -17,5 +17,3 @@ EXPOSE 8000
 #launch Gunicorn and migration and createsuperuser
 CMD sh -c "python manage.py migrate \
     CMD ["gunicorn", "Stripe_payment.wsgi:application", "--bind", "0.0.0.0:8000"]
-
-gunicorn Stripe_payment.wsgi:application --bind 0.0.0.0:$PORT
