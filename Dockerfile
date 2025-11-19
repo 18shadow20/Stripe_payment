@@ -15,5 +15,6 @@ COPY . .
 EXPOSE 8000
 
 #launch Gunicorn and migration and createsuperuser
-CMD sh -c "python manage.py migrate \
-    CMD gunicorn Stripe_payment.wsgi:application --bind 0.0.0.0:$PORT
+CMD python manage.py migrate --noinput && \
+    python -c "from django.contrib.auth import get_user_model; User = get_user_model(); \
+
